@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 Workshop</title>
+</head>
+<body>
+    
+    <header>
+        <button id="fetchNASApic">Fetch and image from NASA</button>
+        <button id="fetchACocktail">Fetch a random Cocktail</button>
+    </header>
+    
+    <main>
+        <section id="cocktailContainer"></section>
+    </main>
+    
+    <footer></footer>
+
+    <!-- scripts -->
+
+    <script>
+        const cocktailButton = document.getElementById("fetchACocktail");
+        const cocktailSection = document.getElementById("cocktailContainer")
+
+        cocktailButton.addEventListener("click", fetchCocktail);
+
+        const randomCocktailURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+
+        function fetchCocktail() {
+            fetch(randomCocktailURL).
+            then((result) => {
+                console.log("Result from Cocktail API:")
+                console.log(result);
+                return result.json();
+            }).
+            then((data) => {
+                console.log("JSON data from the DB:")
+                console.log(data);
+                displayCocktail(data);
+            }).catch((error) => {
+                consold.error(error);
+            });
+        }
+
+        function displayCocktail(data) {
+            while(cocktailSection.firstChild) {
+                cocktailSection.removeChild(cocktailSection.firstChild);
+            }
+
+            const drName = data.drinks[0].strDrink;
+            const drImage = data.drinks[0].strDrinkThumb;
+            const drInstr = data.drinks[0].strInstructions;
+
+            const drTitle = document.createElement('h2');
+            drTitle.innerText = drName;
+
+            const drImg = document.createElement("img");
+            drImg.src = drImage;
+            drImg.alt = drName;
+
+            const drPar = document.createElement('p');
+            drPar.innerText = drInstr;
+
+            cocktailSection.appendChild(drTitle);
+            cocktailSection.appendChild(drImg);
+            cocktailSection.appendChild(drPar);
+        }
+    </script>
+
+</body>
+</html>
