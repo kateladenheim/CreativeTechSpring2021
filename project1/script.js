@@ -121,7 +121,7 @@ function playRetro() {
     console.log('Random song index is ', randomRetroIndex)
     
     const randomRetroSong = retroSongs[randomRetroIndex];
-    new Audio(randomRetroSong).play()
+    new Audio(randomRetroSong).play();
 }
 
 function playNoRetro() {
@@ -141,5 +141,5 @@ function playNoRetro() {
     console.log('Random song index is ', randomNoRetroIndex)
     
     const randomNoRetroSong = noRetroSongs[randomNoRetroIndex];
-    new Audio(randomNoRetroSong).play()
+    new Audio(randomNoRetroSong).play();
 }
