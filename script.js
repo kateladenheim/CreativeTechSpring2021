@@ -1,8 +1,6 @@
 const retrogradeButton = document.getElementById("mercuryRetrograde");
 
 retrogradeButton.addEventListener("click", fetchRetro);
-retrogradeButton.addEventListener("click", fetchPoe);
-retrogradeButton.addEventListener("click", fetchDickinson);
 
 const retrogradeURL = "https://mercuryretrogradeapi.com";
 const poeURL = "https://poetrydb.org/author,random/Edgar%20Allan%20Poe;1";
@@ -19,9 +17,9 @@ function fetchRetro() {
         console.log("JSON data from the DB:")
         console.log(dataRetro);
         if (dataRetro.is_retrograde == true) {
-            displayPoe;
+            fetchPoe();
         } else {
-            displayDickinson;
+            fetchDickinson();
         }
     }).catch((error) => {
         console.error(error);
@@ -38,6 +36,7 @@ function fetchPoe() {
     then((dataPoe) => {
         console.log("JSON data from Poe DB:")
         console.log(dataPoe);
+        displayPoe(dataPoe);
     }).catch((error) => {
         console.error(error);
     });
@@ -53,17 +52,18 @@ function fetchDickinson() {
     then((dataDickinson) => {
         console.log("JSON data from Dickinson DB:")
         console.log(dataDickinson);
+        displayDickinson(dataDickinson);
     }).catch((error) => {
         console.error(error);
     });
 }
 
 function displayPoe(dataPoe) {
-    while(poemDisplay.firstChild) {
-        poemDisplay.removeChild(poemDisplay.firstChild);
-    }
+    // while(poemDisplay.firstChild) {
+    //     poemDisplay.removeChild(poemDisplay.firstChild);
+    // }
 
-    const poeLines = dataPoe.Object[0].lines;
+    const poeLines = dataPoe[0].lines[0];
 
     const poePoem = document.createElement('p');
     poePoem.src = poeLines;
@@ -77,7 +77,7 @@ function displayDickinson(dataDickinson) {
         poemDisplay.removeChild(poemDisplay.firstChild);
     }
 
-    const dickinsonLines = dataDickinson.Object[0].lines;
+    const dickinsonLines = dataDickinson[0].lines[0];
 
     const dickinsonPoem = document.createElement('p');
     dickinsonPoem.src = dickinsonLines;
