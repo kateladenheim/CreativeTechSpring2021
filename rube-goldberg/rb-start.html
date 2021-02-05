@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/kfi0pqz.css">
+    <title>The Web As Rube Goldberg Machine</title>
+</head>
+
+<body>
+    <p class="p1"> How are you feeling today? </p>
+   
+    <div id="emoji">
+
+    </div>
+
+    <script type="text/javascript">
+
+        var emoji = document.getElementById("emoji");
+        //buttons.innerHTML = '<img src="e1.png" />';
+        var Em = '';
+        //tags
+        for(var n = 1;n<=10;n++){
+            Em+=" <button id='Emoji2' class='float-left submit-button'><a href='rb.html?n="+n+"'><img src='e"+n+".jpg' /></a></button>";
+        }
+        //fill inton div
+        emoji.innerHTML=Em;
+
+        
+        document.body.style.backgroundColor = "#f1dec2";
+
+      
+    </script>
+</body>
+</html>

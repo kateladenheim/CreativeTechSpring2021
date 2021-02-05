@@ -1,0 +1,58 @@
+body{
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    background-color: #f1dec2;
+    text-align: center;
+}
+
+p {
+    font-family: aktiv-grotesk-extended, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8em;
+    line-height: 1.8em;
+}
+
+p.p2 {
+    font-size: 1.2em;
+}
+
+a {
+    font-family: aktiv-grotesk-extended, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8em;
+    line-height: 1.8em;
+    color: #435C94;
+}
+
+ul {
+    font-family: aktiv-grotesk-extended, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1em;
+    line-height: 1.5em;
+    list-style-type: none;
+}
+
+button#mercuryRetrograde {
+    border: none;
+    padding: 15px;
+    background-color: #ffffff;
+    font-family: aktiv-grotesk-extended, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+
+button#mercuryRetrograde:focus {
+    outline: none;
+}
+
+.submit-button {
+    border: none;
+    background-color: rgba(255,255,255,0);
+}
