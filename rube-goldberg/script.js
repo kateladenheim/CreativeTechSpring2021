@@ -132,7 +132,7 @@ setTimeout(function() {
 const weatherSection = document.getElementById("weatherContainer");
 const newsSection = document.getElementById("newsContainer");
 
-const weatherURL = "http://api.openweathermap.org/data/2.5/weather?q=Pasadena&APPID=af28a81c6270e46710d7deb15b8c992a&units=imperial";
+const weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=Pasadena&APPID=af28a81c6270e46710d7deb15b8c992a&units=imperial";
 const newsURL = "https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=Ud1GqPVZXUAFxAbZLzK9NhtWwU47a5wd";
 
 // button.addEventListener("click", fetchWeather);
