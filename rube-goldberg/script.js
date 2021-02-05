@@ -51,7 +51,7 @@
       const EmojiCatRain = function EmojiCatRain() {
         this.canvas = document.getElementById("canvasOne");
         let w = window.innerWidth;
-        let h = window.innerHeight;
+        let h = 2500;
         this.canvas.height = h;
         this.canvas.width = w;
       
@@ -125,7 +125,7 @@
 
 setTimeout(function() {
         $('#canvasOne').fadeOut('slow');
-    }, 5000);
+    }, 7000);
 
 
 // const button = document.getElementById("userclick");
