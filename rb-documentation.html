@@ -22,20 +22,26 @@
             <iframe width="768" height="432" src="https://miro.com/app/live-embed/o9J_lXZSoVM=/?moveToViewport=1324,-1348,6712,3532" frameBorder="0" scrolling="no" allowFullScreen></iframe>
         </div>
         <div>
-            <p>In the diagram above, we propose a convoluted system to play a 'song of the day,' taking a user on a journey through some of the data available about that day. We begin by asking them abstractly (via emoji) about their feelings, and then slowly populating the date, weather conditions, popular news stories, and whether or not Mercury is in retrograde. We end by presenting them with an automatically generated Haiku and a song, selected based on data from previous queries.</p>
+            <p>In the diagram above, we propose a convoluted system to play a 'song of the day,' taking a user on a journey through some of the data available about the day. We begin by asking them abstractly (via emoji) about their feelings, and then slowly populating the date, weather conditions, popular news stories, and whether or not Mercury is in retrograde. We end by presenting them with an automatically generated Haiku and a song, selected based on data from previous queries.</p>
 
-            <p>To begin building this, we broke our tree into several distinct parts with the plan to link them together in later stages. I did retrograde to poem to song </p>
+            <p>To begin building this, we broke our tree into several distinct parts with the plan to link them together in later stages. I was initially responsible for figuring out the connection from mercury retrograde through to playing the song. Here's the code for that section (within the body tags), originally activated witha button trigger for querying the first API:</p>
 
-            <!-- insert code block here to show what I created -->
+            <iframe src="https://codepen.io/kateladenheim/embed/YzpGPyB" width="100%" height="450px"></iframe>
 
-            <p>I needed to make some concessions - no sylvia platy (subbed another author), spotify API required registration (so I created an array of songs instead).</p>
+            <p>This code represents a slighty different plan than we originally had. Notably, we were unable to use Sylvia Plath since her works aren't included in the (free) poetry API we selected, so we switched to Edgar Allen Poe. My next challenge was in getting the poem to actually appear; each individual line needed to be appended individually, which was not straightforward since each poem has a different number of lines. This was solved by using .forEach for the array and creating a new line item for each line in the array.</p>
 
-            <p>I also have experience in front end development so I linked our pathways together, triggering each function at the end and adding some timing delays to make it feel like a series of events, Rube Goldberg style. I also added some styling.</p>
+            <p>You'll also notice  a lack of Spotify API used for music selection; we were unable to obtain authorization in time. Instead, I created my own array of songs appropriate for mercury being in retrograde (ominous or sad) and mercury not being in retrograde (upbeat and empowering). While less randomized, it does offer the added benefit of being able to carefully curate the audience end experience ;-) </p>
+
+            <p>I have some experience in front end development — I designed and developed Wordpress websites in my pre-MDP days — so I also was responsible for the last step of the project, which was linking our pathways together. Past the initial emoji selection, functions were triggered at the end of the previous function, with timing delays added to make it feel like a series of cascading events. I also brought all parts of our event tree into the same styling family with simple css.</p>
+
+            <h3><a href="https://kateladenheim.github.io/MDP-CreativeTech/rube-goldberg/rb-start.html">find your song of the day</a></h3>
+            <h3><a href="https://github.com/kateladenheim/MDP-CreativeTech/tree/main/rube-goldberg">see the 'final' code</a></h3>
+
         </div>
 
         <div>
             <p>
-                <a href="https://kateladenheim.github.io/MDP-CreativeTech/week1-reading.html">Week 1 Reading</a> // <a href="https://kateladenheim.github.io/MDP-CreativeTech/">Home</a>
+                <a href="https://kateladenheim.github.io/MDP-CreativeTech/week2-reading.html">Week 2 Reading</a> // <a href="https://kateladenheim.github.io/MDP-CreativeTech/">Home</a>
             </p>
         </div>
 
