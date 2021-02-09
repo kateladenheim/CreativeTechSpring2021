@@ -24,7 +24,7 @@
         <div>
             <p>In the diagram above, we propose a convoluted system to play a 'song of the day,' taking a user on a journey through some of the data available about the day. We begin by asking them abstractly (via emoji) about their feelings, and then slowly populating the date, weather conditions, popular news stories, and whether or not Mercury is in retrograde. We end by presenting them with an automatically generated Haiku and a song, selected based on data from previous queries.</p>
 
-            <p>To begin building this, we broke our tree into several distinct parts with the plan to link them together in later stages. I was initially responsible for figuring out the connection from mercury retrograde through to playing the song. Here's the code for that section (within the body tags), originally activated witha button trigger for querying the first API:</p>
+            <p>To begin building this, we broke our tree into several distinct parts with the plan to link them together in later stages. I was initially responsible for figuring out the connection from mercury retrograde through to playing the song. Here's the code for that section, originally activated with a button trigger for querying the first API:</p>
 
             <iframe src="https://codepen.io/kateladenheim/embed/YzpGPyB" width="100%" height="450px"></iframe>
 
@@ -32,7 +32,7 @@
 
             <p>You'll also notice  a lack of Spotify API used for music selection; we were unable to obtain authorization in time. Instead, I created my own array of songs appropriate for mercury being in retrograde (ominous or sad) and mercury not being in retrograde (upbeat and empowering). While less randomized, it does offer the added benefit of being able to carefully curate the audience end experience ;-) </p>
 
-            <p>I have some experience in front end development — I designed and developed Wordpress websites in my pre-MDP days — so I also was responsible for the last step of the project, which was linking our pathways together. Past the initial emoji selection, functions were triggered at the end of the previous function, with timing delays added to make it feel like a series of cascading events. I also brought all parts of our event tree into the same styling family with simple css.</p>
+            <p>I have some previous experience in front end development, so I also was responsible for the last step of the project, which was linking our pathways together. Past the initial emoji selection, functions were triggered at the end of the previous function, with timing delays added to make it feel like a series of cascading events. I also brought all parts of our event tree into the same styling family with simple css.</p>
 
             <h3><a href="https://kateladenheim.github.io/MDP-CreativeTech/rube-goldberg/rb-start.html">find your song of the day</a></h3>
             <h3><a href="https://github.com/kateladenheim/MDP-CreativeTech/tree/main/rube-goldberg">see the 'final' code</a></h3>
